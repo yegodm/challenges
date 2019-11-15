@@ -161,7 +161,7 @@ class Sudoku private constructor(val digits: Array<BitSet>) {
             }
             .toTypedArray()
 
-        fun index(x: Int, y: Int) = y * 9 + x
+        inline fun index(x: Int, y: Int) = (y shl 3) + y + x
 
         fun create(grid: Array<IntArray>) : Sudoku {
             val digits = Array(10) { _ -> BitSet() }
